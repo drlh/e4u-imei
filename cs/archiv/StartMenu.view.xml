@@ -1,0 +1,52 @@
+<mvc:View
+   controllerName="sap.ui.demo.wt.controller.StartMenu"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">	
+   				
+				<VBox 
+					alignItems="Center" 
+					width ="100%" >
+					
+					<!-- justifyContent="Center"-->
+					 
+					
+							<Button text="Fahrzeug buchen"
+								width = "300px"
+								
+								press="showBuchen"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://calendar">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData> 
+							</Button>
+							<Button text="Buchungsübersicht"
+								width= "300px"
+								press="showUebersicht"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://activity-items">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Profile"
+								width= "300px"
+								press="showProfile"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://repost">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Statistiken"
+								width= "300px"
+								press="showStatistiken"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://line-charts">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+					
+					</VBox>
+</mvc:View>

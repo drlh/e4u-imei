@@ -1,0 +1,6 @@
+{
+	 "anonymous_connection": "imei.services.userdata::Admin",
+	"exposed": true,
+	"authentication" : null
+	
+}

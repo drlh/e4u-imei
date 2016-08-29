@@ -1,0 +1,94 @@
+<mvc:View
+	controllerName="controller.FzgBuchenStart"
+	id ="FzgBuchenStart"
+	viewName ="view.FzgBuchenStart"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	
+	<VBox class="sapUiSmallMargin">
+		<MessageStrip
+		text="Bitte geben Sie ein ab wann Sie Ihr Fahrzeug buchen möchten."
+		type="Information"
+		class="sapUiMediumMarginTop sapUiSmallMarginBottom"
+		showIcon="true" />
+		<Label text="Datum &amp; Uhrzeit zu der Sie starten möchten" />
+		<HBox class="sapUiSmallMarginBottom" >
+			<DatePicker placeholder="Datum eingeben ...">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</DatePicker>
+			<TimePicker placeholder="Uhrzeit eingeben ..." width="100%">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</TimePicker>
+		</HBox>
+		<MessageStrip
+		text="Bitte geben Sie ein ab wann Sie Ihr Fahrzeug zurückbringen möchten. Planen Sie bitte ausreichend Pufferzeit ein."
+		type="Information"
+		class="sapUiMediumMarginTop sapUiSmallMarginBottom"
+		showIcon="true" />
+		<Label text="Datum &amp; Uhrzeit zu der Sie das Fahrzeug zurückgeben" />
+		<HBox class="sapUiSmallMarginBottom" >
+			<DatePicker placeholder="Datum eingeben ...">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</DatePicker>
+			<TimePicker placeholder="Uhrzeit eingeben ..." width="100%">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</TimePicker>
+		</HBox>
+		<Label text="Welche Distanz werden Sie für Hin- und Rückfahrt zurücklegen?" />
+		<HBox class="sapUiSmallMarginBottom" >
+			<Select
+					width="10em"
+                    forceSelection="true"
+                    selectedKey="Reichweite"
+					items="{distanzen>/}">
+					<core:Item key="10" text="{distanzen>Reichweite}" />
+			</Select> 
+			<Label class="kmLabel" textAlign="Right" design="Bold" text="Kilometer"/>
+		</HBox>
+		<Label text="Benötigen Sie ein Fahrzeugen für maximal 2 oder 4 Personen?" />
+		<RadioButtonGroup columns="2" selectedIndex="2" class="sapUiMediumMarginBottom">
+				<buttons>
+					<RadioButton id="2" text="1-2 Personen"/>
+					<RadioButton id="4" text="3-4 Personen"/>
+				</buttons>
+			</RadioButtonGroup>
+		
+	</VBox>
+	<VBox 
+	alignItems="Center" 
+	width ="100%" >
+					<HBox>
+					<Button text="Buchung absenden"
+						width = "14em"
+						type="Accept"
+						press=""
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+						icon="sap-icon://save">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData> 
+					</Button>
+					<Button text="Abbrechen"
+						width = "14em"
+						type="Reject"
+						press=""
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+						icon="sap-icon://decline">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData> 
+					</Button>
+					</HBox>
+	</VBox>
+					
+</mvc:View>

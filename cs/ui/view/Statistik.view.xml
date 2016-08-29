@@ -1,0 +1,37 @@
+<mvc:View 
+	id = "statistic"
+	viewName = "view.Statistik"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" xmlns:micro="sap.suite.ui.microchart" 
+	controllerName="controller.Statistik" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Panel headerText="Ihre Statistiken">
+		<Table>
+			<columns>
+				<Column demandPopin="true" minScreenWidth="Tablet">
+					<Text text="Typ" />
+				</Column>
+				
+				<Column demandPopin="true" minScreenWidth="Tablet">
+					<Text text="Grafik" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="Genauigkeit Ihrer Buchungen" />
+						
+						<FlexBox height="70px" width="70px">
+							<layoutData>
+								<FlexItemData maxHeight="70px" />
+							</layoutData>
+							<micro:RadialMicroChart percentage="80" press="press" />
+						</FlexBox>
+					</cells>
+				</ColumnListItem>
+				
+			</items>
+		</Table>
+	</Panel>
+</mvc:View>

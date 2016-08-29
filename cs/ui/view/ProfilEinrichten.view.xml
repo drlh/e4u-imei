@@ -1,0 +1,85 @@
+<mvc:View 
+	height="100%" 
+	controllerName="controller.ProfilEinrichten"
+	id="ProfilEinrichten"
+	viewName="view.ProfilEinrichten"
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<!-- Input List -->
+	<List
+		headerText="Profil anlegen" >
+		<InputListItem label="Profilname">
+			<Input
+				placeholder="Name für Profil eingeben"
+				value="z.B. Projekttreffen IMEI" />
+		</InputListItem>
+		<InputListItem label="Profil aktiv">
+			<Switch state="true" />
+		</InputListItem>
+		<InputListItem label="Wochentage">
+			<MultiComboBox 
+				selectionChange="handleSelectionChange" 
+				selectionFinish="handleSelectionFinish" 
+				width="200px"
+				items="{buchungstage>/}">
+				<core:Item key="{buchungstage>Tag}" text="{buchungstage>Tag}" />
+			</MultiComboBox>
+		</InputListItem>
+		<InputListItem label="Startzeit">
+			<TimePicker placeholder="Uhrzeit eingeben ..." width="200px">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</TimePicker>
+		</InputListItem>
+		<InputListItem label="Rückgabe">
+			<TimePicker placeholder="Uhrzeit eingeben ..." width="200px">
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+			</TimePicker>
+		</InputListItem>
+		<InputListItem label="4 Personen?">
+			<CheckBox state="true" />
+		</InputListItem>
+		<InputListItem label="Distanz">
+			<Select
+						width="10em"
+	                    forceSelection="true"
+	                    selectedKey="Reichweite"
+						items="{distanzen>/}">
+						<core:Item key="10" text="{distanzen>Reichweite}" />
+			</Select> 
+			<Label class="kmLabel" textAlign="Right" design="Bold" text="km"/>
+		</InputListItem>
+		
+	</List>
+	<VBox 
+	alignItems="Center" 
+	width ="100%" >
+					<HBox>
+					<Button text="Speichern"
+						width = "14em"
+						type="Accept"
+						press=""
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+						icon="sap-icon://save">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData> 
+					</Button>
+					<Button text="Abbrechen"
+						width = "14em"
+						type="Reject"
+						press=""
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+						icon="sap-icon://decline">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData> 
+					</Button>
+					</HBox>
+	</VBox>
+</mvc:View>

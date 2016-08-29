@@ -1,0 +1,5 @@
+{
+	"anonymous_connection": "imei.cm.services.pref::Admin",
+	"exposed": true,
+	"authentication" : null
+}

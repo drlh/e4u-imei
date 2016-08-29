@@ -1,0 +1,87 @@
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	displayBlock="true">
+	<App class="myAppDemoWT">
+		<pages>
+			<Page title="{i18n>homePageTitle}">
+				<customHeader>
+					<Toolbar>
+						<Button icon="sap-icon://menu2" press="handleToggleSecondaryContent" />
+						<ToolbarSpacer/>
+						<Title text="IMEI Fuhrparkmanagement" level="H2"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://home" press="onPress" ariaLabelledBy="homeButtonLabel"/>
+					</Toolbar>
+				</customHeader>
+				
+				<u:SplitContainer
+				id="mySplitContainer"
+				height= "100px"
+				showSecondaryContent="false">
+				<u:secondaryContent>
+				<Text text="Hello World!" />
+				</u:secondaryContent>
+				<u:content>
+				<!--  <content>-->
+					<!--  <mvc:XMLView viewName="sap.ui.demo.wt.view.SplitMenu"/>-->
+					<VBox 
+					alignItems="Center" 
+					width ="100%" >
+					
+					<!-- justifyContent="Center"-->
+					 
+					
+							<Button text="Fahrzeug buchen"
+								width = "300px"
+								
+								press="showBuchen"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://calendar">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData> 
+							</Button>
+							<Button text="Buchungsübersicht"
+								width= "300px"
+								press="showUebersicht"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://activity-items">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Profile"
+								width= "300px"
+								press="showProfile"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://repost">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Statistiken"
+								width= "300px"
+								press="showStatistiken"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://line-charts">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+					
+					</VBox>
+					
+					<!--<mvc:XMLView viewName="sap.ui.demo.wt.view.StartMenu"/> -->
+					<!--<mvc:XMLView viewName="sap.ui.demo.wt.view.HelloPanel"/> -->
+					<!--  <mvc:XMLView viewName="sap.ui.demo.wt.view.InvoiceList"/>-->
+				<!--  </content>-->
+				</u:content>
+				</u:SplitContainer>
+				
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

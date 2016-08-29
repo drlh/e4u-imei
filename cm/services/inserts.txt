@@ -1,0 +1,15 @@
+insert into "A611414"."LADEAUFTRAEGE" values('','','',,'','','','',)
+select 
+"LAID",
+"ANKUNFT",
+"ABFAHRT",
+"MENGE",
+"ENTFERNUNG",
+"KENNZEICHEN",
+"LSTID",
+"DATUM_TS",
+"DIREKT"
+ from "A611414"."LADEAUFTRAEGE"
+ 
+ 
+ 

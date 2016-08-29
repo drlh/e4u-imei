@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="utf-8">
+      <title>Walkthrough</title>
+      <script
+         src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+         id="sap-ui-bootstrap"
+         data-sap-ui-theme="sap_bluecrystal"
+         data-sap-ui-libs="sap.m, sap.makit"
+         data-sap-ui-resourceroots='{
+            "ui": "/imei/cs/ui"
+         }'>
+         >
+      </script>
+      <script>
+	/*       sap.ui.getCore().attachInit(function () {
+        	 new sap.m.Shell({
+        	 app : new sap.ui.core.ComponentContainer({
+                 name : "sap.ui.demo.wt",
+                 height: "100%"
+        	 })
+              }).placeAt("content");
+         });  */
+         
+        
+            sap.ui.localResources("view");
+            sap.ui.localResources("controller");
+         
+         	var page = sap.ui.view({id:"App", viewName:"view.App", type: sap.ui.core.mvc.ViewType.XML});
+        	 var oApp = new sap.m.App({initialPage:"App"});
+			
+			oApp.addPage(page);
+			
+			
+			
+			new sap.m.Shell("SHELL",{
+	               app : oApp
+	            }).placeAt("content"); 
+       		
+      </script>
+   </head>
+   <body class="sapUiBody" id="content">
+   </body>
+</html>

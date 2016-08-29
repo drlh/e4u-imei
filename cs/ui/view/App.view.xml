@@ -1,0 +1,124 @@
+<mvc:View
+	controllerName="controller.App"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	id="App"
+	viewName ="view.App"
+	displayBlock="true">
+	<SplitApp id="SplitAppDemo" viewName ="view.SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+		<detailPages>
+			<Page id="detail" viewName="view.detail" title="Startseite IMEI Fuhrparkmanagement" class="sapUiStdPage">
+				<content>
+					<VBox 
+					alignItems="Center" 
+					width ="100%" >
+							<Button text="Fahrzeug buchen"
+								width = "300px"
+								press="onFahrzeugbuchenItemPress"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://calendar">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData> 
+							</Button>
+							<Button text="Buchungsübersicht"
+								width= "300px"
+								press="onBuchungsuebersichtItemPress"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://activity-items">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Profile"
+								width= "300px"
+								press="onProfileItemPress"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://repost">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+							<Button text="Statistiken"
+								width= "300px"
+								press="showStatistiken"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://line-charts">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+							</Button>
+					</VBox>
+				</content>
+			</Page>
+			<Page id="buchungsuebersicht" title="Buchungsübersicht" class="sapUiStdPage" showNavButton="true"
+				  navButtonText="Back" navButtonPress="onPressDetailBack">
+				<content>
+					
+					<mvc:XMLView viewName="view.BuchungsTabelle"/>
+				</content>
+			</Page>
+			<Page id="fzgbuchen" title="Fahrzeug buchen" class="sapUiStdPage" showNavButton="true"
+				  navButtonText="Back" navButtonPress="onPressDetailBack">
+				<content>
+					<!-- <Label text="Dies ist die Fahzeug buchen Seite" /> -->
+					<mvc:XMLView viewName="view.FzgBuchenStart"/>
+				</content>
+			</Page>
+			<Page id="profile" title="Ihre Profile" class="sapUiStdPage" showNavButton="true"
+				  navButtonText="Back" navButtonPress="onPressDetailBack">
+				<content>
+					<!-- <Label text="Dies ist die Profile Seite" /> -->
+					<mvc:XMLView viewName="view.ProfilEinrichten"/>
+				</content>
+			</Page>
+			<Page id="statistik" title="Detail 3 Page" class="sapUiStdPage" showNavButton="true"
+				  navButtonText="Back" navButtonPress="onPressDetailBack">
+				<content>
+					<!-- <Label text="This is Statistik Page3" /> -->
+					<mvc:XMLView viewName="view.Statistik"/>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="master" title="Hauptmenü" class="sapUiStdPage">
+				<content>
+					<List>
+						<items>
+							<StandardListItem title="Fahrzeug buchen" icon="sap-icon://calendar" type="Navigation" press="onFahrzeugbuchenItemPress"/>
+							<StandardListItem title="Buchungsübersicht" icon="sap-icon://activity-items" type="Navigation" press="onBuchungsuebersichtItemPress"/>
+							<StandardListItem title="Profile" icon="sap-icon://repost" type="Navigation" press="onPressGoToProfile"/>
+							<StandardListItem title="Statistiken" icon="sap-icon://line-charts" type="Navigation" press="onPressGoToStatistik"/>
+						</items>
+					</List>
+				</content>
+			</Page>
+			<Page id="master2" title="Master 2" icon="sap-icon://action" class="sapUiStdPage" showNavButton="true"
+				  navButtonPress="onPressMasterBack">
+				<content>
+					<List itemPress="onListItemPress">
+						<items>
+							<StandardListItem title="Statistik 1" type="Active" custom:to="statistik"/>
+							<StandardListItem title="Statistik 2" type="Active" custom:to="statistik"/>
+							<StandardListItem title="Statistik 3" type="Active" custom:to="statistik"/>
+						</items>
+					</List>
+				</content>
+			</Page>
+			<Page id="master3" title="Master 3" icon="sap-icon://action" class="sapUiStdPage" showNavButton="true"
+				  navButtonPress="onPressMasterBack">
+				<content>
+					<List itemPress="onListItemPress">
+						<items>
+							<StandardListItem title="Profile anzeigen" type="Active" custom:to="profile"/>
+							<StandardListItem title="Profil anlegen" type="Active" custom:to="profile"/>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

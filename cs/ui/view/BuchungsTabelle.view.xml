@@ -1,0 +1,109 @@
+<mvc:View
+	controllerName="controller.BuchungsTabelle"
+	id="BuchungsTabelle"
+	viewName="view.BuchungsTabelle"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m">
+	<Table id="idProductsTable"
+		inset="false"
+		 items="{buchungen>/}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Ihre Buchungen" level="H2"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="8em">
+				<Text text="BuchungsNr" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Gebucht ab" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Uhrzeit" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Rückgabe am" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Uhrzeit" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Personen" />
+			</Column>
+			<Column>
+				<Text text="Distanz" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="handleLinkPress">
+				<cells>
+					<ObjectIdentifier
+						title="{buchungen>BuchungsNr}"
+						text="{buchungen>Kennzeichen}"/>
+					<Text text="{buchungen>Start}"></Text>
+					<!-- <Text text="{
+						path: 'buchungen>Start',
+						type: 'sap.ui.model.type.Date',
+							formatOptions: {
+								source: {pattern: 'yyyy-MM-ddTHH:mm:ss'},
+								style: 'medium'
+							}
+						}"/>  -->
+					<!-- <Text text=" "/> -->
+					<Text
+						text="{
+						path: 'buchungen>Start',
+						type: 'sap.ui.model.type.Time',
+							formatOptions: {
+								source: {pattern: 'yyyy-MM-ddTHH:mm:ss'},
+								style: 'medium'
+							}
+						}" /> 
+					<Text text="{
+						path: 'buchungen>Ende',
+						type: 'sap.ui.model.type.Date',
+							formatOptions: {
+								source: {pattern: 'yyyy-MM-ddTHH:mm:ss'},
+								style: 'medium'
+							}
+						}"/> 
+					<Text
+						text="{
+						path: 'buchungen>Ende',
+						type: 'sap.ui.model.type.Time',
+							formatOptions: {
+								source: {pattern: 'yyyy-MM-ddTHH:mm:ss'},
+								style: 'medium'
+							}
+						}" /> 
+					<!-- <Text text=" "/> -->
+					<Text
+						text="{buchungen>Personen}" />
+					<Text
+						text="{buchungen>Reichweite}" />
+					<!--  <ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

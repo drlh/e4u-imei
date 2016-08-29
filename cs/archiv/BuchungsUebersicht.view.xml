@@ -1,0 +1,23 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      headerText="{i18n>invoiceListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{buchungen>/}" >
+      <items>
+         <ObjectListItem
+            title="BNr: {buchungen>BuchungsNr}"
+            number="{buchungen>Personen}
+            Personen, gebucht für {
+			path: 'buchungen>Start',
+			type: 'sap.ui.model.type.DateTime',
+				formatOptions: {
+					source: {pattern: 'yyyy-MM-ddTHH:mm:ss'},
+					style: 'medium'
+				}
+			}, Distanz: {buchungen>Reichweite} km"/>
+      </items>
+   </List>
+</mvc:View>
