@@ -1,0 +1,17 @@
+{
+    "_______________APP________________":"",
+  	"ressourcePath" : {
+  			"e4u.imei": "./",
+			"view" : "./view/",
+			"controller" : "./js/appcontroller/",
+			"cs": "./view/cs/view/",
+			"ccs" : "./view/cs/controller/",
+			"cm" : "./view/cm/view/",
+			"ccm" : "./view/cm/controller/"
+  	},
+    
+    "_______________LOGIN________________":"",
+    
+    "_______________DASHBOARD________________":""
+    
+}

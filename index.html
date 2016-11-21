@@ -1,27 +1,106 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-	<!-- 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<script
+	src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m, sap.makit"
+	data-sap-ui-theme="sap_bluecrystal"
+	data-sap-ui-resourceroots='  			{
+			"view" : "./view/",
+			"controller" : "./js/appcontroller/",
+			"cs": "./view/cs/view/",
+			"ccs" : "./view/cs/controller/",
+			"cm" : "./view/cm/view/",
+			"ccm" : "./view/cm/controller/"}'>
+	
+</script>
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9rOAQkm5UrV6UZVkwi_yorzlm1iL-JoU&libraries=places"
+type ="text/javascript">
+</script>
 
-		<script src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m"
-				data-sap-ui-theme="sap_bluecrystal">
-		</script>
-		
+<script>
+	sap.ui.getCore().attachInit(function() {
+		// 		sap.ui.localResources("view");
+		// 		sap.ui.localResources("controller");
 
-		<script>
-				sap.ui.localResources("ui/view");
-				var app = new sap.m.App({initialPage:"idlogin1"});
-				var page = sap.ui.view({id:"idlogin1", viewName:"view.login", type:sap.ui.core.mvc.ViewType.JS});
-				app.addPage(page);
-				app.placeAt("content");
-		</script> -->
-		<meta http-equiv="refresh" content="0; URL=ui/index.html">
+		// 		sap.ui.localResources("cs", "./view/cs/");
+		// 		sap.ui.localResources("ccs", "./view/cs/controller/");
 
-	</head>
-	<body class="sapUiBody" role="application">
-		<div id="content"></div>
-	</body>
+		// 		sap.ui.localResources("cm", "./view/cm/");
+		// 		sap.ui.localResources("ccm", "./view/cm/controller/");
+
+		jQuery.sap.require("sap.m.MessageBox");
+	});
+
+	// 		var oApp = new sap.m.App({
+	// 			initialPage : "App"
+	// 		});
+	// 		var page = sap.ui.view({
+	// 			id : "App",
+	// 			viewName : "view.appstart",
+	// 			//viewName : "view.cs.view.menu",
+	// 			type : sap.ui.core.mvc.ViewType.JS
+	// 		});
+	// 		oApp.addPage(page);
+
+	// 		new sap.m.Shell("SHELL", {
+	// 			app : oApp
+	// 		}).placeAt("content");
+
+	var oApplication = {}; // Global application object  
+	oApplication.views = {}; // Global views reference via application object  
+    
+    
+    
+	oApplication.loadViews = function() {
+		this.loadView("cs.menu");
+	}
+
+	oApplication.getApp = function() {
+		if (this.app !== undefined)
+			return this.app;
+	}
+
+	oApplication.loadView = function(sViewName) {
+		if (typeof this.views[sViewName] === "undefined") {
+			// 						var sViewFullName = "view." + sViewName;
+
+			var temp = sViewName.split(".");
+
+			this.views[sViewName] = sap.ui.view({
+				id : temp[1],
+				viewName : sViewName,
+				type : sap.ui.core.mvc.ViewType.JS
+			});
+
+			this.app.addPage(this.views[sViewName]);
+		}
+	}
+
+	var view = sap.ui.view({
+		id : "appstart",
+		viewName : "view.appstart",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+
+	if (view !== undefined) {
+		console.log("passt alles");
+		view.placeAt("content");
+	}
+</script>
+<style>
+.myMap {                   
+height: 100%;
+width: 100%  ;
+}
+</style>
+<!-- <script src="controller/app.js"></script> -->
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
 </html>

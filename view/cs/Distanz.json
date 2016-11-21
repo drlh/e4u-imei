@@ -1,0 +1,68 @@
+{
+"Werte" :[
+  {
+	"Reichweite": 10.00,
+	"Text": "10 Kilometer"
+  },
+  {
+	"Reichweite": 20.00,
+	"Text": "20 Kilometer"
+	},
+  {
+	"Reichweite": 30.00,
+	"Text": "30 Kilometer"
+  },
+  {
+	"Reichweite": 40.00,
+	"Text": "40 Kilometer"
+  },
+  {
+	"Reichweite": 50.00,
+	"Text": "50 Kilometer"
+  },
+  {
+	"Reichweite": 60.00,
+	"Text": "60 Kilometer"
+  },
+  {
+	"Reichweite": 70.00,
+	"Text": "70 Kilometer"
+	},
+  {
+	"Reichweite": 80.00,
+	"Text": "80 Kilometer"
+  },
+  {
+	"Reichweite": 90.00,
+	"Text": "90 Kilometer"
+  },
+  {
+	"Reichweite": 100.00,
+	"Text": "100 Kilometer"
+  },
+   {
+	"Reichweite": 110.00,
+	"Text": "110 Kilometer"
+  },
+  {
+	"Reichweite": 120.00,
+	"Text": "120 Kilometer"
+  },
+  {
+	"Reichweite": 150.00,
+	"Text": "150 Kilometer"
+  },
+  {
+	"Reichweite": 200.00,
+	"Text": "200 Kilometer"
+  },
+   {
+	"Reichweite": 250.00,
+	"Text": "250 Kilometer"
+  },
+  {
+	"Reichweite": 300.00,
+	"Text": "300 Kilometer"
+  }
+]
+}

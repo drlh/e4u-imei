@@ -1,5 +1,4 @@
 {
-	"exposed": true,
-	"authentication" : null,
-	"default_file" : "index.html"
+    "exposed": true,
+    "authentication" : null
 }

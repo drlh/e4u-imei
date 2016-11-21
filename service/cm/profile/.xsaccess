@@ -1,0 +1,6 @@
+{
+	 "anonymous_connection": "e4u.imei.service.cm.profile::Admin",
+	"exposed": true,
+	"authentication" : null
+	
+}
